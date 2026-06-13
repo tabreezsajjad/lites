@@ -337,8 +337,14 @@ function App() {
         aria-label="Lighting collections"
       >
         <div className="collections__header">
-          <p className="section-kicker">Product display</p>
-          <h2>More lights visible, even on mobile.</h2>
+          <div>
+            <p className="section-kicker">Lighting collections</p>
+            <h2>Explore the Lites collection.</h2>
+          </div>
+          <p>
+            From statement chandeliers to outdoor fixtures, browse the categories customers
+            come in to compare, scale, and choose in person.
+          </p>
         </div>
         {collections.map((item) => (
           <motion.article className={`collection collection--${item.tone}`} key={item.title} whileHover={{ y: -8 }}>

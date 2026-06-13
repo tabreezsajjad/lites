@@ -11,9 +11,11 @@ dist/
 .chrome-profile-productpage/
 .chrome-profile-distinctimages/
 .chrome-profile-showroomwall/
+.chrome-profile-productheader/
 desktop.png
 desktop-experience.png
 desktop-align.png
+desktop-products.png
 desktop-showroom-wall.png
 mobile.png
 mobile-cdp.png
