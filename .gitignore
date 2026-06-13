@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.npm-cache/
+.chrome-profile/
+.chrome-profile-ui2/
+.chrome-profile-framer/
+.chrome-profile-creative/
+desktop.png
+mobile.png
+mobile-cdp.png
