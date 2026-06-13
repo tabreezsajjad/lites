@@ -663,6 +663,153 @@ h2 {
   backdrop-filter: blur(14px);
 }
 
+.light-lab {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1fr);
+  gap: 0;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(32, 25, 21, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 241, 0.92), rgba(255, 250, 241, 0.72)),
+    radial-gradient(circle at 28% 46%, rgba(255, 207, 117, 0.5), transparent 34%),
+    linear-gradient(135deg, #f7f3ed, #bfe9df);
+  box-shadow: 0 30px 80px rgba(32, 25, 21, 0.12);
+}
+
+.light-lab::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(32, 25, 21, 0.08);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.light-lab__dial {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle, rgba(255, 207, 117, 0.54) 0 18%, transparent 19%),
+    conic-gradient(from 210deg, #ffcf75, #fffaf1, #0f6f70, #c85d4c, #ffcf75);
+}
+
+.light-lab__dial::before {
+  content: "";
+  position: absolute;
+  width: 245px;
+  height: 245px;
+  border: 1px solid rgba(32, 25, 21, 0.1);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #fffaf1 0 25%, rgba(255, 250, 241, 0.38) 26% 44%, transparent 45%),
+    repeating-conic-gradient(from 0deg, rgba(32, 25, 21, 0.42) 0 1deg, transparent 1deg 18deg);
+  box-shadow: 0 0 76px rgba(255, 207, 117, 0.68);
+  animation: dialTurn 12s linear infinite;
+}
+
+.light-lab__dial strong {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border-radius: 50%;
+  color: #201915;
+  background: rgba(255, 250, 241, 0.9);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  box-shadow: inset 0 0 0 1px rgba(32, 25, 21, 0.08);
+}
+
+.light-lab__beam {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 260px;
+  height: 72px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(255, 207, 117, 0.4), transparent);
+  filter: blur(14px);
+}
+
+.light-lab__beam--one {
+  transform: rotate(-28deg);
+}
+
+.light-lab__beam--two {
+  transform: rotate(18deg);
+}
+
+.light-lab__beam--three {
+  transform: rotate(58deg);
+  background: linear-gradient(90deg, rgba(15, 111, 112, 0.34), transparent);
+}
+
+.light-lab__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 28px;
+  padding: 34px;
+}
+
+.light-lab__panel p {
+  max-width: 480px;
+  margin: 0;
+  color: #4f463e;
+  font-size: 19px;
+  line-height: 1.58;
+}
+
+.light-lab__controls {
+  display: grid;
+  gap: 14px;
+}
+
+.light-lab__control {
+  display: grid;
+  gap: 9px;
+}
+
+.light-lab__control span {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.light-lab__control em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.light-lab__control i {
+  position: relative;
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(32, 25, 21, 0.1);
+}
+
+.light-lab__control i::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--level);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--amber), var(--teal));
+}
+
 .collections {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -687,33 +834,34 @@ h2 {
 }
 
 .experience {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
-  gap: 26px;
-  align-items: stretch;
-  padding: 0 0 76px;
+  grid-template-columns: minmax(260px, 0.52fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  overflow: hidden;
+  padding: 44px;
+  border-radius: 8px;
+  color: #fffaf1;
+  background:
+    linear-gradient(135deg, rgba(25, 23, 21, 0.96), rgba(54, 37, 27, 0.96)),
+    url("/assets/lites-showroom-hero.png") center / cover;
+  box-shadow: 0 30px 90px rgba(32, 25, 21, 0.22);
+  margin-bottom: 76px;
 }
 
 .experience__heading {
   position: relative;
-  overflow: hidden;
-  min-height: 360px;
-  padding: 30px;
-  border-radius: 8px;
+  overflow: visible;
+  min-height: auto;
+  padding: 0;
+  border-radius: 0;
   color: #fffaf1;
-  background:
-    linear-gradient(160deg, rgba(25, 23, 21, 0.88), rgba(82, 53, 33, 0.78)),
-    url("/assets/lites-showroom-hero.png") center / cover;
+  background: none;
 }
 
 .experience__heading::after {
-  content: "";
-  position: absolute;
-  inset: auto -20% -42% auto;
-  width: 330px;
-  height: 330px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 207, 117, 0.32), transparent 68%);
+  display: none;
 }
 
 .experience__heading > * {
@@ -723,48 +871,73 @@ h2 {
 
 .experience__heading h2 {
   color: #fffaf1;
+  font-size: clamp(34px, 4.8vw, 70px);
 }
 
-.process-grid {
+.journey {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 0;
+  padding: 34px 0;
 }
 
-.process-card {
-  display: flex;
-  min-height: 360px;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 24px;
-  border: 1px solid rgba(32, 25, 21, 0.1);
-  border-radius: 8px;
-  background: #fffaf1;
-  box-shadow: 0 20px 55px rgba(32, 25, 21, 0.08);
+.journey::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 38px;
+  right: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), rgba(255, 250, 241, 0.34), var(--teal));
+  box-shadow: 0 0 32px rgba(255, 207, 117, 0.48);
 }
 
-.process-card span {
-  display: inline-flex;
-  width: fit-content;
-  margin-bottom: auto;
-  padding: 8px 10px;
-  border-radius: 999px;
-  color: #6e4210;
-  background: #ffe0a0;
-  font-size: 13px;
+.journey__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.journey__step:nth-child(even) {
+  padding-left: 72px;
+}
+
+.journey__step > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 50%;
+  color: #201915;
+  background: var(--amber);
   font-weight: 950;
+  box-shadow: 0 0 42px rgba(255, 207, 117, 0.45);
 }
 
-.process-card h3 {
-  margin-bottom: 12px;
-  color: var(--ink);
+.journey__step div {
+  position: relative;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 250, 241, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.journey__step h3 {
+  margin-bottom: 8px;
+  color: #fffaf1;
   font-size: 24px;
 }
 
-.process-card p {
+.journey__step p {
   margin-bottom: 0;
-  color: var(--muted);
-  line-height: 1.62;
+  color: rgba(255, 250, 241, 0.76);
+  line-height: 1.58;
 }
 
 .collection__icon {
@@ -1067,9 +1240,42 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .light-lab {
+    grid-template-columns: 1fr;
+  }
+
+  .light-lab__dial {
+    min-height: 300px;
+  }
+
+  .journey {
+    padding: 10px 0 0;
+  }
+
+  .journey::before {
+    top: 24px;
+    bottom: 24px;
+    left: 29px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--amber), rgba(255, 250, 241, 0.34), var(--teal));
+  }
+
+  .journey__step,
+  .journey__step:nth-child(even) {
+    grid-template-columns: 58px 1fr;
+    padding-left: 0;
+  }
+
   .experience__heading,
   .process-card {
     min-height: 260px;
+  }
+
+  .experience {
+    padding: 32px;
+    margin-bottom: 56px;
   }
 
   .hero__panel {
@@ -1181,6 +1387,23 @@ h2 {
 
   .feature-band__media {
     min-height: 300px;
+  }
+
+  .light-lab__panel {
+    padding: 24px;
+  }
+
+  .light-lab__dial::before {
+    width: 210px;
+    height: 210px;
+  }
+
+  .journey__step {
+    gap: 12px;
+  }
+
+  .journey__step div {
+    padding: 17px;
   }
 }
 

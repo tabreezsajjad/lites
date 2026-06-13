@@ -89,7 +89,13 @@ const services = [
   'Installation coordination for complex chandelier and profile work',
 ];
 
-const processCards = [
+const lightLayers = [
+  { label: 'Warmth', value: '3000K', width: '72%' },
+  { label: 'Focus', value: 'Accent', width: '54%' },
+  { label: 'Drama', value: 'Statement', width: '86%' },
+];
+
+const journeySteps = [
   {
     step: '01',
     title: 'Bring the room',
@@ -275,24 +281,27 @@ function App() {
       <motion.section className="intro" id="studio" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.35 }} variants={staggerGroup}>
         <div>
           <motion.p className="section-kicker" variants={fadeUp}>Designed for real rooms</motion.p>
-          <motion.h2 variants={fadeUp}>Design the room by designing the glow first.</motion.h2>
+          <motion.h2 variants={fadeUp}>Tune every room until the light feels right.</motion.h2>
         </div>
-        <motion.div className="mood-board" variants={fadeUp}>
-          <div className="mood-board__stage" aria-hidden="true">
-            <span className="mood-board__pendant mood-board__pendant--one" />
-            <span className="mood-board__pendant mood-board__pendant--two" />
-            <span className="mood-board__pendant mood-board__pendant--three" />
-            <span className="mood-board__sofa" />
+        <motion.div className="light-lab" variants={fadeUp}>
+          <div className="light-lab__dial" aria-hidden="true">
+            <span className="light-lab__beam light-lab__beam--one" />
+            <span className="light-lab__beam light-lab__beam--two" />
+            <span className="light-lab__beam light-lab__beam--three" />
+            <strong>Glow</strong>
           </div>
-          <div className="mood-board__copy">
-            <p>
-              Bring a photo, plan, or loose idea. Lites helps you layer ambient, accent, and
-              statement lighting until the room feels complete.
-            </p>
-            <div className="mood-board__layers" aria-label="Lighting layers">
-              <span>Ambient</span>
-              <span>Accent</span>
-              <span>Statement</span>
+          <div className="light-lab__panel">
+            <p>Bring a photo, plan, or loose idea. Lites helps tune warmth, focus, and drama before you choose the final fixture.</p>
+            <div className="light-lab__controls" aria-label="Lighting controls">
+              {lightLayers.map((layer) => (
+                <div className="light-lab__control" key={layer.label}>
+                  <span>
+                    <b>{layer.label}</b>
+                    <em>{layer.value}</em>
+                  </span>
+                  <i style={{ '--level': layer.width }} />
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -326,15 +335,17 @@ function App() {
 
       <motion.section className="experience" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={staggerGroup}>
         <motion.div className="experience__heading" variants={fadeUp}>
-          <p className="section-kicker">How the studio helps</p>
-          <h2>A brighter choice, made room by room.</h2>
+          <p className="section-kicker">The studio route</p>
+          <h2>From snapshot to switch-on.</h2>
         </motion.div>
-        <div className="process-grid">
-          {processCards.map((card) => (
-            <motion.article className="process-card" key={card.step} variants={fadeUp} whileHover={{ y: -6 }}>
+        <div className="journey">
+          {journeySteps.map((card) => (
+            <motion.article className="journey__step" key={card.step} variants={fadeUp} whileHover={{ y: -5 }}>
               <span>{card.step}</span>
-              <h3>{card.title}</h3>
-              <p>{card.text}</p>
+              <div>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </div>
             </motion.article>
           ))}
         </div>
