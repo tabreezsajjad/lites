@@ -97,6 +97,8 @@ const collections = [
   },
 ];
 
+const productTiles = ['Chandeliers', 'Pendants', 'Wall lights'];
+
 const services = [
   'Lighting layouts for homes, hotels, boutiques, and offices',
   'On-site selection support with scale and finish guidance',
@@ -300,6 +302,7 @@ function App() {
         </div>
         <motion.div className="selection-board" variants={fadeUp}>
           <div className="selection-board__visual" aria-hidden="true">
+            <img src="/assets/lites-showroom-hero.png" alt="" />
             <span className="selection-board__sample selection-board__sample--brass" />
             <span className="selection-board__sample selection-board__sample--crystal" />
             <span className="selection-board__sample selection-board__sample--profile" />
@@ -331,6 +334,9 @@ function App() {
         </div>
         {collections.map((item) => (
           <motion.article className={`collection collection--${item.tone}`} key={item.title} whileHover={{ y: -8 }}>
+            <div className="collection__media">
+              <img src="/assets/lites-showroom-hero.png" alt="" />
+            </div>
             <div className="collection__icon">
               {item.tone === 'champagne' && <Gem size={24} />}
               {item.tone === 'teal' && <Lightbulb size={24} />}
@@ -350,6 +356,11 @@ function App() {
         <motion.div className="experience__heading" variants={fadeUp}>
           <p className="section-kicker">The studio route</p>
           <h2>From snapshot to switch-on.</h2>
+          <div className="experience__products" aria-label="Lighting products">
+            {productTiles.map((tile) => (
+              <span key={tile}>{tile}</span>
+            ))}
+          </div>
         </motion.div>
         <div className="journey">
           {journeySteps.map((card) => (
@@ -366,6 +377,7 @@ function App() {
 
       <motion.section className="feature-band" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={staggerGroup}>
         <motion.div className="feature-band__media" aria-hidden="true" variants={fadeUp}>
+          <img src="/assets/lites-showroom-hero.png" alt="" />
           <span />
           <span />
           <span />
@@ -384,7 +396,17 @@ function App() {
       <motion.section className="services" id="services" aria-label="Services" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={staggerGroup}>
         <motion.div className="services__heading" variants={fadeUp}>
           <WandSparkles size={28} />
-          <h2>From inspiration to installation</h2>
+          <div>
+            <h2>From inspiration to installation</h2>
+            <div className="services__gallery" aria-label="Product examples">
+              {productTiles.map((tile) => (
+                <span key={tile}>
+                  <img src="/assets/lites-showroom-hero.png" alt="" />
+                  <b>{tile}</b>
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
         <motion.div className="service-list" variants={staggerGroup}>
           {services.map((service) => (

@@ -696,6 +696,18 @@ h2 {
     repeating-linear-gradient(90deg, rgba(32, 25, 21, 0.07) 0 1px, transparent 1px 58px);
 }
 
+.selection-board__visual img {
+  position: absolute;
+  inset: 24px;
+  width: calc(100% - 48px);
+  height: 45%;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: 66% 28%;
+  opacity: 0.92;
+  box-shadow: 0 18px 44px rgba(32, 25, 21, 0.12);
+}
+
 .selection-board__visual::before {
   content: "";
   position: absolute;
@@ -713,7 +725,7 @@ h2 {
 
 .selection-board__sample--brass {
   left: 18%;
-  top: 18%;
+  top: 52%;
   width: 124px;
   height: 124px;
   background:
@@ -723,7 +735,7 @@ h2 {
 
 .selection-board__sample--crystal {
   right: 16%;
-  top: 25%;
+  top: 58%;
   width: 104px;
   height: 104px;
   background:
@@ -733,7 +745,7 @@ h2 {
 
 .selection-board__sample--profile {
   left: 22%;
-  bottom: 20%;
+  bottom: 8%;
   width: min(220px, 62%);
   height: 76px;
   background:
@@ -847,6 +859,46 @@ h2 {
     box-shadow 200ms ease;
 }
 
+.collection__media {
+  height: 150px;
+  margin: -12px -12px 22px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #201915;
+}
+
+.collection__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 280ms ease;
+}
+
+.collection:nth-of-type(2) .collection__media img {
+  object-position: 52% 28%;
+}
+
+.collection:nth-of-type(3) .collection__media img {
+  object-position: 82% 42%;
+}
+
+.collection:nth-of-type(4) .collection__media img {
+  object-position: 74% 55%;
+}
+
+.collection:nth-of-type(5) .collection__media img {
+  object-position: 92% 34%;
+}
+
+.collection:nth-of-type(6) .collection__media img {
+  object-position: 46% 74%;
+}
+
+.collection:hover .collection__media img {
+  transform: scale(1.06);
+}
+
 .collection:hover {
   box-shadow: 0 28px 70px rgba(32, 25, 21, 0.14);
 }
@@ -890,6 +942,26 @@ h2 {
 .experience__heading h2 {
   color: #fffaf1;
   font-size: clamp(34px, 4.8vw, 70px);
+}
+
+.experience__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.experience__products span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 250, 241, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.1);
+  color: rgba(255, 250, 241, 0.86);
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .journey {
@@ -1023,6 +1095,17 @@ h2 {
     linear-gradient(135deg, #2b2119 0%, #523521 48%, #0f4f52 100%);
 }
 
+.feature-band__media > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 45%;
+  opacity: 0.44;
+  mix-blend-mode: screen;
+}
+
 .feature-band__media::after {
   content: "";
   position: absolute;
@@ -1041,6 +1124,7 @@ h2 {
 
 .feature-band__media span {
   position: absolute;
+  z-index: 1;
   top: 26%;
   width: 2px;
   height: 210px;
@@ -1094,10 +1178,60 @@ h2 {
   align-items: flex-start;
 }
 
+.services__heading > div {
+  min-width: 0;
+}
+
 .services__heading svg {
   flex: 0 0 auto;
   margin-top: 8px;
   color: var(--gold);
+}
+
+.services__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.services__gallery span {
+  position: relative;
+  display: grid;
+  min-height: 112px;
+  overflow: hidden;
+  align-items: end;
+  padding: 10px;
+  border-radius: 8px;
+  background: #201915;
+}
+
+.services__gallery img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+}
+
+.services__gallery span:nth-child(1) img {
+  object-position: 62% 24%;
+}
+
+.services__gallery span:nth-child(2) img {
+  object-position: 48% 36%;
+}
+
+.services__gallery span:nth-child(3) img {
+  object-position: 86% 42%;
+}
+
+.services__gallery b {
+  position: relative;
+  color: #fffaf1;
+  font-size: 13px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.42);
 }
 
 .service-list {
@@ -1142,7 +1276,9 @@ h2 {
   padding: 34px;
   border-radius: 8px;
   color: #fffaf1;
-  background: linear-gradient(135deg, #191715 0%, #523521 54%, #0f6f70 100%);
+  background:
+    linear-gradient(135deg, rgba(25, 23, 21, 0.93) 0%, rgba(82, 53, 33, 0.86) 54%, rgba(15, 111, 112, 0.84) 100%),
+    url("/assets/lites-showroom-hero.png") center / cover;
 }
 
 .visit::before {
@@ -1423,9 +1559,14 @@ h2 {
 
   .collection {
     display: grid;
-    min-height: 168px;
+    min-height: 242px;
     padding: 13px;
     align-content: start;
+  }
+
+  .collection__media {
+    height: 82px;
+    margin: -4px -4px 12px;
   }
 
   .collection__icon {
@@ -1537,6 +1678,25 @@ h2 {
   .feature-band__media span:nth-child(3) {
     left: 77%;
     top: 30%;
+  }
+
+  .services__gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .services__gallery span {
+    min-height: 82px;
+    padding: 8px;
+  }
+
+  .services__gallery b {
+    font-size: 11px;
+  }
+
+  .selection-board__visual img {
+    height: 42%;
+    object-position: 64% 36%;
   }
 }
 
