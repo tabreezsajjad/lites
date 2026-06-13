@@ -76,7 +76,7 @@ const collections = [
     tone: 'teal',
   },
   {
-    title: 'Architectural Glow',
+    title: 'Architectural Lines',
     detail: 'Concealed profiles, downlights, wall grazers, outdoor fixtures, and warm linear details.',
     tone: 'coral',
   },
@@ -89,10 +89,10 @@ const services = [
   'Installation coordination for complex chandelier and profile work',
 ];
 
-const lightLayers = [
-  { label: 'Warmth', value: '3000K', width: '72%' },
-  { label: 'Focus', value: 'Accent', width: '54%' },
-  { label: 'Drama', value: 'Statement', width: '86%' },
+const materialNotes = [
+  { label: 'Brass', value: 'Warm metal' },
+  { label: 'Crystal', value: 'Statement sparkle' },
+  { label: 'Profile', value: 'Clean lines' },
 ];
 
 const journeySteps = [
@@ -281,25 +281,23 @@ function App() {
       <motion.section className="intro" id="studio" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.35 }} variants={staggerGroup}>
         <div>
           <motion.p className="section-kicker" variants={fadeUp}>Designed for real rooms</motion.p>
-          <motion.h2 variants={fadeUp}>Tune every room until the light feels right.</motion.h2>
+          <motion.h2 variants={fadeUp}>Choose fixtures the way designers build a room.</motion.h2>
         </div>
-        <motion.div className="light-lab" variants={fadeUp}>
-          <div className="light-lab__dial" aria-hidden="true">
-            <span className="light-lab__beam light-lab__beam--one" />
-            <span className="light-lab__beam light-lab__beam--two" />
-            <span className="light-lab__beam light-lab__beam--three" />
-            <strong>Glow</strong>
+        <motion.div className="selection-board" variants={fadeUp}>
+          <div className="selection-board__visual" aria-hidden="true">
+            <span className="selection-board__sample selection-board__sample--brass" />
+            <span className="selection-board__sample selection-board__sample--crystal" />
+            <span className="selection-board__sample selection-board__sample--profile" />
+            <span className="selection-board__line selection-board__line--one" />
+            <span className="selection-board__line selection-board__line--two" />
           </div>
-          <div className="light-lab__panel">
-            <p>Bring a photo, plan, or loose idea. Lites helps tune warmth, focus, and drama before you choose the final fixture.</p>
-            <div className="light-lab__controls" aria-label="Lighting controls">
-              {lightLayers.map((layer) => (
-                <div className="light-lab__control" key={layer.label}>
-                  <span>
-                    <b>{layer.label}</b>
-                    <em>{layer.value}</em>
-                  </span>
-                  <i style={{ '--level': layer.width }} />
+          <div className="selection-board__panel">
+            <p>Bring a photo, plan, or loose idea. Lites helps compare scale, finish, proportion, and installation fit before you choose the final fixture.</p>
+            <div className="selection-board__notes" aria-label="Material and fixture notes">
+              {materialNotes.map((note) => (
+                <div className="selection-board__note" key={note.label}>
+                  <b>{note.label}</b>
+                  <span>{note.value}</span>
                 </div>
               ))}
             </div>

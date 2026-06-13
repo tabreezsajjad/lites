@@ -6,7 +6,9 @@ dist/
 .chrome-profile-framer/
 .chrome-profile-creative/
 .chrome-profile-unique/
+.chrome-profile-mobilefix/
 desktop.png
 desktop-experience.png
 mobile.png
 mobile-cdp.png
+mobile-feature.png
