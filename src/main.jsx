@@ -116,10 +116,11 @@ const services = [
   'Installation coordination for complex chandelier and profile work',
 ];
 
-const materialNotes = [
-  { label: 'Brass', value: 'Warm metal' },
-  { label: 'Crystal', value: 'Statement sparkle' },
-  { label: 'Profile', value: 'Clean lines' },
+const showroomHighlights = [
+  { label: 'Chandeliers', image: '/assets/product-chandelier.png' },
+  { label: 'Pendants', image: '/assets/product-pendants.png' },
+  { label: 'Profiles', image: '/assets/product-architectural.png' },
+  { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
 ];
 
 const journeySteps = [
@@ -307,28 +308,25 @@ function App() {
 
       <motion.section className="intro" id="studio" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.35 }} variants={staggerGroup}>
         <div>
-          <motion.p className="section-kicker" variants={fadeUp}>Designed for real rooms</motion.p>
-          <motion.h2 variants={fadeUp}>Choose fixtures the way designers build a room.</motion.h2>
+          <motion.p className="section-kicker" variants={fadeUp}>Seen inside the showroom</motion.p>
+          <motion.h2 variants={fadeUp}>Walk the wall. Compare the lights. Pick what belongs.</motion.h2>
         </div>
-        <motion.div className="selection-board" variants={fadeUp}>
-          <div className="selection-board__visual" aria-hidden="true">
-            <img src="/assets/product-architectural.png" alt="" />
-            <span className="selection-board__sample selection-board__sample--brass" />
-            <span className="selection-board__sample selection-board__sample--crystal" />
-            <span className="selection-board__sample selection-board__sample--profile" />
-            <span className="selection-board__line selection-board__line--one" />
-            <span className="selection-board__line selection-board__line--two" />
+        <motion.div className="showroom-wall" variants={fadeUp}>
+          <div className="showroom-wall__hero">
+            <img src="/assets/product-chandelier.png" alt="Statement chandelier display" />
+            <span>Statement chandelier wall</span>
           </div>
-          <div className="selection-board__panel">
-            <p>Bring a photo, plan, or loose idea. Lites helps compare scale, finish, proportion, and installation fit before you choose the final fixture.</p>
-            <div className="selection-board__notes" aria-label="Material and fixture notes">
-              {materialNotes.map((note) => (
-                <div className="selection-board__note" key={note.label}>
-                  <b>{note.label}</b>
-                  <span>{note.value}</span>
-                </div>
-              ))}
-            </div>
+          <div className="showroom-wall__tiles" aria-label="Showroom product examples">
+            {showroomHighlights.slice(1).map((item) => (
+              <figure key={item.label}>
+                <img src={item.image} alt="" />
+                <figcaption>{item.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="showroom-wall__note">
+            <strong>Bring your room photo.</strong>
+            <p>Match scale, finish, and brightness with real fixtures instead of guessing from a catalogue.</p>
           </div>
         </motion.div>
       </motion.section>
