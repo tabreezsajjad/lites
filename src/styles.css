@@ -484,10 +484,10 @@ h1 {
 
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.78fr);
-  gap: 44px;
-  align-items: stretch;
-  padding: 88px 0 70px;
+  grid-template-columns: minmax(0, 0.88fr) minmax(520px, 0.82fr);
+  gap: 56px;
+  align-items: center;
+  padding: 88px 0 72px;
 }
 
 h2 {
@@ -666,9 +666,9 @@ h2 {
 .selection-board {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(220px, 0.88fr) minmax(260px, 1fr);
+  grid-template-columns: minmax(260px, 0.86fr) minmax(260px, 1fr);
   gap: 0;
-  min-height: 420px;
+  min-height: 392px;
   overflow: hidden;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
@@ -688,7 +688,7 @@ h2 {
 .selection-board__visual {
   position: relative;
   display: grid;
-  min-height: 420px;
+  min-height: 392px;
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(255, 207, 117, 0.22), rgba(15, 111, 112, 0.18)),
@@ -714,8 +714,8 @@ h2 {
 .selection-board__sample--brass {
   left: 18%;
   top: 18%;
-  width: 132px;
-  height: 132px;
+  width: 124px;
+  height: 124px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 46%),
     linear-gradient(135deg, #fee1a1, #b97924);
@@ -724,17 +724,17 @@ h2 {
 .selection-board__sample--crystal {
   right: 16%;
   top: 25%;
-  width: 112px;
-  height: 112px;
+  width: 104px;
+  height: 104px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(191, 233, 223, 0.32)),
     repeating-linear-gradient(45deg, rgba(32, 25, 21, 0.12) 0 1px, transparent 1px 14px);
 }
 
 .selection-board__sample--profile {
-  left: 26%;
+  left: 22%;
   bottom: 20%;
-  width: 220px;
+  width: min(220px, 62%);
   height: 76px;
   background:
     linear-gradient(90deg, #201915 0 18%, #fffaf1 18% 22%, #0f6f70 22% 100%);
@@ -766,8 +766,9 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  gap: 28px;
-  padding: 34px;
+  gap: 24px;
+  padding: 32px;
+  min-width: 0;
 }
 
 .selection-board__panel p {
@@ -780,30 +781,37 @@ h2 {
 
 .selection-board__notes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  min-width: 0;
 }
 
 .selection-board__note {
-  display: grid;
-  gap: 6px;
-  min-height: 88px;
-  align-content: end;
-  padding: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  min-width: 0;
+  padding: 10px 12px;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
   background: rgba(247, 243, 237, 0.72);
 }
 
 .selection-board__note b {
+  flex: 0 0 auto;
   color: var(--ink);
   font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
 .selection-board__note span {
+  text-align: right;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.3;
+  overflow-wrap: anywhere;
 }
 
 .collections {
@@ -811,6 +819,20 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding-bottom: 70px;
+}
+
+.collections__header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(280px, 0.35fr);
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 8px;
+}
+
+.collections__header h2 {
+  max-width: 760px;
+  font-size: clamp(34px, 4.2vw, 56px);
 }
 
 .collection {
@@ -1244,6 +1266,10 @@ h2 {
     min-height: 300px;
   }
 
+  .collections__header {
+    grid-template-columns: 1fr;
+  }
+
   .journey {
     padding: 10px 0 0;
   }
@@ -1380,6 +1406,56 @@ h2 {
     min-height: 0;
   }
 
+  .collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding-bottom: 42px;
+  }
+
+  .collections__header {
+    grid-column: 1 / -1;
+  }
+
+  .collections__header h2 {
+    font-size: 28px;
+    line-height: 1.05;
+  }
+
+  .collection {
+    display: grid;
+    min-height: 168px;
+    padding: 13px;
+    align-content: start;
+  }
+
+  .collection__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .collection h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 1.08;
+  }
+
+  .collection p {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.35;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .collection a {
+    align-self: end;
+    margin-top: auto;
+    font-size: 12px;
+  }
+
   .feature-band__media {
     min-height: 300px;
   }
@@ -1390,6 +1466,19 @@ h2 {
 
   .selection-board__notes {
     grid-template-columns: 1fr;
+  }
+
+  .selection-board__note {
+    min-height: 42px;
+    padding: 10px;
+  }
+
+  .selection-board__note b {
+    font-size: 13px;
+  }
+
+  .selection-board__note span {
+    font-size: 12px;
   }
 
   .selection-board__sample--brass {

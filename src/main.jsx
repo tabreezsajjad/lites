@@ -80,6 +80,21 @@ const collections = [
     detail: 'Concealed profiles, downlights, wall grazers, outdoor fixtures, and warm linear details.',
     tone: 'coral',
   },
+  {
+    title: 'Wall & Mirror Lights',
+    detail: 'Soft wall washers, vanity lights, picture lights, and bedside accents.',
+    tone: 'champagne',
+  },
+  {
+    title: 'Outdoor Fixtures',
+    detail: 'Weather-ready gate, balcony, garden, and facade lights for warm evenings.',
+    tone: 'teal',
+  },
+  {
+    title: 'Table & Floor Lamps',
+    detail: 'Portable layers for lounges, reading corners, bedrooms, and hospitality spaces.',
+    tone: 'coral',
+  },
 ];
 
 const services = [
@@ -309,13 +324,13 @@ function App() {
         className="collections"
         id="collections"
         aria-label="Lighting collections"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.24 }}
-        variants={staggerGroup}
       >
+        <div className="collections__header">
+          <p className="section-kicker">Product display</p>
+          <h2>More lights visible, even on mobile.</h2>
+        </div>
         {collections.map((item) => (
-          <motion.article className={`collection collection--${item.tone}`} key={item.title} variants={fadeUp} whileHover={{ y: -8 }}>
+          <motion.article className={`collection collection--${item.tone}`} key={item.title} whileHover={{ y: -8 }}>
             <div className="collection__icon">
               {item.tone === 'champagne' && <Gem size={24} />}
               {item.tone === 'teal' && <Lightbulb size={24} />}

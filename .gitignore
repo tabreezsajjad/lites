@@ -7,8 +7,11 @@ dist/
 .chrome-profile-creative/
 .chrome-profile-unique/
 .chrome-profile-mobilefix/
+.chrome-profile-alignproducts/
 desktop.png
 desktop-experience.png
+desktop-align.png
 mobile.png
 mobile-cdp.png
 mobile-feature.png
+mobile-products.png
