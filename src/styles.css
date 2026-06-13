@@ -915,7 +915,7 @@ h2 {
   color: #fffaf1;
   background:
     linear-gradient(135deg, rgba(25, 23, 21, 0.96), rgba(54, 37, 27, 0.96)),
-    url("/assets/lites-showroom-hero.png") center / cover;
+    url("/assets/product-pendants.png") center / cover;
   box-shadow: 0 30px 90px rgba(32, 25, 21, 0.22);
   margin-bottom: 76px;
 }
@@ -1278,7 +1278,7 @@ h2 {
   color: #fffaf1;
   background:
     linear-gradient(135deg, rgba(25, 23, 21, 0.93) 0%, rgba(82, 53, 33, 0.86) 54%, rgba(15, 111, 112, 0.84) 100%),
-    url("/assets/lites-showroom-hero.png") center / cover;
+    url("/assets/product-outdoor.png") center / cover;
 }
 
 .visit::before {

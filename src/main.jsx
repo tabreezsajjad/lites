@@ -69,35 +69,45 @@ const collections = [
     title: 'Statement Chandeliers',
     detail: 'Crystal, brass, glass, and sculptural centerpieces for halls and double-height spaces.',
     tone: 'champagne',
+    image: '/assets/product-chandelier.png',
   },
   {
     title: 'Pendant Stories',
     detail: 'Dining clusters, kitchen islands, bedside drops, and cafe-style feature lighting.',
     tone: 'teal',
+    image: '/assets/product-pendants.png',
   },
   {
     title: 'Architectural Lines',
     detail: 'Concealed profiles, downlights, wall grazers, outdoor fixtures, and warm linear details.',
     tone: 'coral',
+    image: '/assets/product-architectural.png',
   },
   {
     title: 'Wall & Mirror Lights',
     detail: 'Soft wall washers, vanity lights, picture lights, and bedside accents.',
     tone: 'champagne',
+    image: '/assets/product-wall-mirror.png',
   },
   {
     title: 'Outdoor Fixtures',
     detail: 'Weather-ready gate, balcony, garden, and facade lights for warm evenings.',
     tone: 'teal',
+    image: '/assets/product-outdoor.png',
   },
   {
     title: 'Table & Floor Lamps',
     detail: 'Portable layers for lounges, reading corners, bedrooms, and hospitality spaces.',
     tone: 'coral',
+    image: '/assets/product-table-floor.png',
   },
 ];
 
-const productTiles = ['Chandeliers', 'Pendants', 'Wall lights'];
+const productTiles = [
+  { label: 'Chandeliers', image: '/assets/product-chandelier.png' },
+  { label: 'Pendants', image: '/assets/product-pendants.png' },
+  { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
+];
 
 const services = [
   'Lighting layouts for homes, hotels, boutiques, and offices',
@@ -302,7 +312,7 @@ function App() {
         </div>
         <motion.div className="selection-board" variants={fadeUp}>
           <div className="selection-board__visual" aria-hidden="true">
-            <img src="/assets/lites-showroom-hero.png" alt="" />
+            <img src="/assets/product-architectural.png" alt="" />
             <span className="selection-board__sample selection-board__sample--brass" />
             <span className="selection-board__sample selection-board__sample--crystal" />
             <span className="selection-board__sample selection-board__sample--profile" />
@@ -335,7 +345,7 @@ function App() {
         {collections.map((item) => (
           <motion.article className={`collection collection--${item.tone}`} key={item.title} whileHover={{ y: -8 }}>
             <div className="collection__media">
-              <img src="/assets/lites-showroom-hero.png" alt="" />
+              <img src={item.image} alt="" />
             </div>
             <div className="collection__icon">
               {item.tone === 'champagne' && <Gem size={24} />}
@@ -358,7 +368,7 @@ function App() {
           <h2>From snapshot to switch-on.</h2>
           <div className="experience__products" aria-label="Lighting products">
             {productTiles.map((tile) => (
-              <span key={tile}>{tile}</span>
+              <span key={tile.label}>{tile.label}</span>
             ))}
           </div>
         </motion.div>
@@ -377,7 +387,7 @@ function App() {
 
       <motion.section className="feature-band" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={staggerGroup}>
         <motion.div className="feature-band__media" aria-hidden="true" variants={fadeUp}>
-          <img src="/assets/lites-showroom-hero.png" alt="" />
+          <img src="/assets/product-wall-mirror.png" alt="" />
           <span />
           <span />
           <span />
@@ -400,9 +410,9 @@ function App() {
             <h2>From inspiration to installation</h2>
             <div className="services__gallery" aria-label="Product examples">
               {productTiles.map((tile) => (
-                <span key={tile}>
-                  <img src="/assets/lites-showroom-hero.png" alt="" />
-                  <b>{tile}</b>
+                <span key={tile.label}>
+                  <img src={tile.image} alt="" />
+                  <b>{tile.label}</b>
                 </span>
               ))}
             </div>
