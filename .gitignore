@@ -12,6 +12,8 @@ dist/
 .chrome-profile-distinctimages/
 .chrome-profile-showroomwall/
 .chrome-profile-productheader/
+.chrome-profile-glow*/
+.chrome-profile-debugtest/
 desktop.png
 desktop-experience.png
 desktop-align.png

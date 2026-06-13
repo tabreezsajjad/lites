@@ -341,10 +341,29 @@ function App() {
             <p className="section-kicker">Lighting collections</p>
             <h2>Explore the Lites collection.</h2>
           </div>
-          <p>
-            From statement chandeliers to outdoor fixtures, browse the categories customers
-            come in to compare, scale, and choose in person.
-          </p>
+          <motion.div
+            className="collections__glow-card"
+            aria-label="Animated lighting finish preview"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.7, ease }}
+          >
+            <div className="collections__glow-rig" aria-hidden="true">
+              <span className="collections__drop collections__drop--one" />
+              <span className="collections__drop collections__drop--two" />
+              <span className="collections__drop collections__drop--three" />
+            </div>
+            <div className="collections__glow-copy">
+              <strong>Compare the glow before you choose.</strong>
+              <span>Warm brass, crystal sparkle, clean profiles, and outdoor warmth in one showroom walk.</span>
+            </div>
+            <div className="collections__glow-tags" aria-label="Available lighting categories">
+              <span>Brass</span>
+              <span>Crystal</span>
+              <span>Profiles</span>
+            </div>
+          </motion.div>
         </div>
         {collections.map((item) => (
           <motion.article className={`collection collection--${item.tone}`} key={item.title} whileHover={{ y: -8 }}>
