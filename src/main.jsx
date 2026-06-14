@@ -38,6 +38,7 @@ const staggerGroup = {
 
 const navItems = [
   { label: 'Collections', href: '#collections' },
+  { label: 'Chandeliers', href: '#chandeliers' },
   { label: 'Studio', href: '#studio' },
   { label: 'Services', href: '#services' },
   { label: 'Visit', href: '#visit' },
@@ -101,6 +102,30 @@ const collections = [
     tone: 'coral',
     image: '/assets/product-table-floor.png',
   },
+  {
+    title: 'Crystal Chandeliers',
+    detail: 'Ornate crystal drops, champagne metal, and glowing statement pieces for formal rooms.',
+    tone: 'champagne',
+    image: '/assets/decor-crystal-closeup.png',
+  },
+  {
+    title: 'Modern Chandeliers',
+    detail: 'Ring lights, globe clusters, slim brass frames, and sculptural contemporary fixtures.',
+    tone: 'teal',
+    image: '/assets/decor-modern-chandeliers.png',
+  },
+  {
+    title: 'Decorative Ceiling Lights',
+    detail: 'Layered ceiling fixtures for bedrooms, lounges, dining rooms, and showroom-style interiors.',
+    tone: 'coral',
+    image: '/assets/decor-chandelier-gallery.png',
+  },
+  {
+    title: 'Full Showroom Selection',
+    detail: 'A richer walk-through of chandeliers, wall lights, lamps, and decorative fixture families.',
+    tone: 'champagne',
+    image: '/assets/decor-showroom-aisle.png',
+  },
 ];
 
 const productTiles = [
@@ -110,6 +135,27 @@ const productTiles = [
   { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
   { label: 'Outdoor', image: '/assets/product-outdoor.png' },
   { label: 'Lamps', image: '/assets/product-table-floor.png' },
+  { label: 'Crystal', image: '/assets/decor-crystal-closeup.png' },
+  { label: 'Modern', image: '/assets/decor-modern-chandeliers.png' },
+];
+
+const chandelierGallery = [
+  {
+    label: 'Crystal chandeliers',
+    image: '/assets/decor-crystal-closeup.png',
+  },
+  {
+    label: 'Modern rings',
+    image: '/assets/decor-modern-chandeliers.png',
+  },
+  {
+    label: 'Showroom aisle',
+    image: '/assets/decor-showroom-aisle.png',
+  },
+  {
+    label: 'Ceiling collections',
+    image: '/assets/decor-chandelier-gallery.png',
+  },
 ];
 
 const services = [
@@ -120,9 +166,9 @@ const services = [
 ];
 
 const showroomHighlights = [
-  { label: 'Chandeliers', image: '/assets/product-chandelier.png' },
-  { label: 'Pendants', image: '/assets/product-pendants.png' },
-  { label: 'Profiles', image: '/assets/product-architectural.png' },
+  { label: 'Chandeliers', image: '/assets/decor-chandelier-gallery.png' },
+  { label: 'Crystal', image: '/assets/decor-crystal-closeup.png' },
+  { label: 'Modern rings', image: '/assets/decor-modern-chandeliers.png' },
   { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
 ];
 
@@ -316,7 +362,7 @@ function App() {
         </div>
         <motion.div className="showroom-wall" variants={fadeUp}>
           <div className="showroom-wall__hero">
-            <img src="/assets/product-chandelier.png" alt="Statement chandelier display" />
+            <img src={showroomHighlights[0].image} alt="Statement chandelier display" />
             <span>Statement chandelier wall</span>
           </div>
           <div className="showroom-wall__tiles" aria-label="Showroom product examples">
@@ -331,6 +377,34 @@ function App() {
             <strong>Bring your room photo.</strong>
             <p>Match scale, finish, and brightness with real fixtures instead of guessing from a catalogue.</p>
           </div>
+        </motion.div>
+      </motion.section>
+
+      <motion.section className="chandelier-decor" id="chandeliers" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.22 }} variants={staggerGroup}>
+        <motion.div className="chandelier-decor__copy" variants={fadeUp}>
+          <p className="section-kicker">Chandelier & decor lights</p>
+          <h2>More sparkle, more scale, more lights to choose from.</h2>
+          <p>
+            A decorative lighting page should feel like entering the showroom. Browse crystal
+            chandeliers, modern rings, ceiling clusters, wall lights, and table lamps together
+            so every room has a visible lighting direction.
+          </p>
+        </motion.div>
+        <motion.div className="chandelier-decor__gallery" variants={staggerGroup} aria-label="Chandelier and lighting decor gallery">
+          {chandelierGallery.map((item, index) => (
+            <motion.figure
+              className="chandelier-decor__item"
+              key={item.label}
+              variants={fadeUp}
+              whileHover={{ y: -6 }}
+            >
+              <img src={item.image} alt="" />
+              <figcaption>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                {item.label}
+              </figcaption>
+            </motion.figure>
+          ))}
         </motion.div>
       </motion.section>
 

@@ -397,6 +397,7 @@ h1 {
 }
 
 .intro,
+.chandelier-decor,
 .collections,
 .feature-band,
 .services,
@@ -951,6 +952,123 @@ h2 {
   margin-bottom: 0;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.chandelier-decor {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.48fr) minmax(0, 1fr);
+  gap: 38px;
+  align-items: stretch;
+  padding: 34px 0 86px;
+}
+
+.chandelier-decor__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 520px;
+  padding: 36px;
+  border-radius: 8px;
+  color: #fffaf1;
+  background:
+    linear-gradient(180deg, rgba(25, 23, 21, 0.34), rgba(25, 23, 21, 0.9)),
+    url("/assets/decor-showroom-aisle.png") center / cover;
+  box-shadow: 0 28px 76px rgba(32, 25, 21, 0.18);
+}
+
+.chandelier-decor__copy h2 {
+  color: #fffaf1;
+  font-size: clamp(36px, 4.5vw, 68px);
+}
+
+.chandelier-decor__copy p:not(.section-kicker) {
+  margin: 22px 0 0;
+  color: rgba(255, 250, 241, 0.78);
+  font-size: 18px;
+  line-height: 1.68;
+}
+
+.chandelier-decor__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.chandelier-decor__item {
+  position: relative;
+  min-height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #201915;
+  box-shadow: 0 20px 54px rgba(32, 25, 21, 0.12);
+}
+
+.chandelier-decor__item:first-child,
+.chandelier-decor__item:nth-child(4) {
+  min-height: 300px;
+}
+
+.chandelier-decor__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: transform 320ms ease;
+}
+
+.chandelier-decor__item:hover img {
+  transform: scale(1.05);
+}
+
+.chandelier-decor__item:first-child img {
+  object-position: 54% 35%;
+}
+
+.chandelier-decor__item:nth-child(2) img {
+  object-position: 50% 38%;
+}
+
+.chandelier-decor__item:nth-child(3) img {
+  object-position: 54% 44%;
+}
+
+.chandelier-decor__item:nth-child(4) img {
+  object-position: 62% 34%;
+}
+
+.chandelier-decor__item::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 42%, rgba(25, 23, 21, 0.74));
+}
+
+.chandelier-decor__item figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #fffaf1;
+  font-size: 18px;
+  font-weight: 950;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.55);
+}
+
+.chandelier-decor__item figcaption span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 999px;
+  color: #201915;
+  background: var(--amber);
+  font-size: 13px;
 }
 
 .collections {
@@ -1656,6 +1774,7 @@ h2 {
 
   .hero__panel,
   .intro,
+  .chandelier-decor,
   .collections,
   .feature-band,
   .services,
@@ -1744,6 +1863,20 @@ h2 {
     padding-top: 72px;
   }
 
+  .chandelier-decor {
+    gap: 14px;
+    padding: 18px 0 58px;
+  }
+
+  .chandelier-decor__copy {
+    min-height: 380px;
+    padding: 28px;
+  }
+
+  .chandelier-decor__gallery {
+    gap: 10px;
+  }
+
   .collections,
   .experience,
   .services {
@@ -1777,6 +1910,7 @@ h2 {
   .hero__content,
   .hero__panel,
   .intro,
+  .chandelier-decor,
   .collections,
   .feature-band,
   .services,
@@ -1845,6 +1979,44 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     padding-bottom: 42px;
+  }
+
+  .chandelier-decor__copy {
+    min-height: 340px;
+    padding: 22px;
+  }
+
+  .chandelier-decor__copy h2 {
+    font-size: 32px;
+  }
+
+  .chandelier-decor__copy p:not(.section-kicker) {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .chandelier-decor__gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chandelier-decor__item,
+  .chandelier-decor__item:first-child,
+  .chandelier-decor__item:nth-child(4) {
+    min-height: 150px;
+  }
+
+  .chandelier-decor__item figcaption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .chandelier-decor__item figcaption span {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
   }
 
   .collections__header {
