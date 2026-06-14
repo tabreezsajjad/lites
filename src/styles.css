@@ -526,7 +526,15 @@ h1 {
   grid-template-columns: minmax(0, 0.88fr) minmax(520px, 0.82fr);
   gap: 56px;
   align-items: center;
-  padding: 88px 0 72px;
+  padding: 64px 36px;
+  border: 1px solid rgba(32, 25, 21, 0.08);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 207, 117, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(255, 244, 228, 0.72), rgba(238, 225, 208, 0.62));
+  box-shadow: 0 24px 70px rgba(32, 25, 21, 0.08);
+  margin-top: 72px;
+  margin-bottom: 42px;
 }
 
 h2 {
@@ -997,7 +1005,7 @@ h2 {
   grid-template-columns: minmax(280px, 0.48fr) minmax(0, 1fr);
   gap: 38px;
   align-items: stretch;
-  padding: 34px 0 86px;
+  padding: 34px 0 64px;
 }
 
 .chandelier-decor__copy {
@@ -1111,9 +1119,17 @@ h2 {
 
 .collections {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding-bottom: 70px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  padding: 38px;
+  border: 1px solid rgba(32, 25, 21, 0.08);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 207, 117, 0.18), transparent 34%),
+    radial-gradient(circle at 86% 100%, rgba(15, 111, 112, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 244, 228, 0.78), rgba(238, 225, 208, 0.66));
+  box-shadow: 0 24px 80px rgba(32, 25, 21, 0.08);
+  margin-bottom: 72px;
 }
 
 .collections__header {
@@ -1257,8 +1273,10 @@ h2 {
 }
 
 .collection {
-  min-height: 330px;
-  padding: 28px;
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+  padding: 16px;
   border: 1px solid rgba(32, 25, 21, 0.09);
   border-radius: 8px;
   background:
@@ -1271,8 +1289,8 @@ h2 {
 }
 
 .collection__media {
-  height: 150px;
-  margin: -12px -12px 22px;
+  height: 128px;
+  margin: 0 0 18px;
   overflow: hidden;
   border-radius: 8px;
   background: #201915;
@@ -1479,9 +1497,9 @@ h2 {
 
 .collection__icon {
   display: grid;
-  width: 54px;
-  height: 54px;
-  margin-bottom: 28px;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
   place-items: center;
   border-radius: 50%;
 }
@@ -1502,23 +1520,27 @@ h2 {
 }
 
 .collection h3 {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   color: var(--ink);
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.08;
 }
 
 .collection p {
-  min-height: 92px;
+  min-height: 112px;
+  margin-bottom: 16px;
   color: var(--muted);
-  line-height: 1.62;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .collection a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  margin-top: auto;
   color: var(--teal);
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -1527,9 +1549,14 @@ h2 {
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1fr);
   gap: 52px;
   align-items: center;
-  padding: 76px 0;
-  border-top: 1px solid rgba(32, 25, 21, 0.1);
-  border-bottom: 1px solid rgba(32, 25, 21, 0.1);
+  padding: 48px;
+  border: 1px solid rgba(32, 25, 21, 0.1);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(255, 207, 117, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(255, 244, 228, 0.72), rgba(235, 224, 210, 0.58));
+  box-shadow: 0 24px 80px rgba(32, 25, 21, 0.08);
+  margin-bottom: 64px;
 }
 
 .feature-band__media {
@@ -1603,7 +1630,14 @@ h2 {
   display: grid;
   grid-template-columns: 0.72fr 1fr;
   gap: 38px;
-  padding: 78px 0;
+  padding: 48px;
+  border: 1px solid rgba(32, 25, 21, 0.08);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 90% 16%, rgba(255, 207, 117, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 244, 228, 0.72), rgba(238, 225, 208, 0.62));
+  box-shadow: 0 24px 72px rgba(32, 25, 21, 0.08);
+  margin-bottom: 64px;
 }
 
 .services__heading {
@@ -1624,7 +1658,7 @@ h2 {
 
 .services__gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 26px;
 }
@@ -1900,7 +1934,9 @@ h2 {
 
   .intro {
     gap: 22px;
-    padding-top: 72px;
+    padding: 28px;
+    margin-top: 54px;
+    margin-bottom: 28px;
   }
 
   .chandelier-decor {
@@ -1923,9 +1959,18 @@ h2 {
     padding-bottom: 56px;
   }
 
+  .collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 28px;
+  }
+
   .feature-band {
     gap: 34px;
-    padding: 58px 0;
+    padding: 28px;
+  }
+
+  .services {
+    padding: 28px;
   }
 
   .visit {
@@ -2018,7 +2063,8 @@ h2 {
   .collections {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    padding-bottom: 42px;
+    padding: 14px;
+    margin-bottom: 42px;
   }
 
   .chandelier-decor__copy {
@@ -2095,7 +2141,7 @@ h2 {
 
   .collection {
     display: grid;
-    min-height: 242px;
+    min-height: 264px;
     padding: 13px;
     align-content: start;
   }
@@ -2120,6 +2166,7 @@ h2 {
   .collection p {
     display: -webkit-box;
     overflow: hidden;
+    min-height: 32px;
     margin-bottom: 12px;
     font-size: 12px;
     line-height: 1.35;
@@ -2183,6 +2230,7 @@ h2 {
 
   .feature-band {
     align-items: stretch;
+    padding: 14px;
   }
 
   .feature-band__media {
@@ -2208,7 +2256,7 @@ h2 {
   }
 
   .services__gallery span {
-    min-height: 96px;
+    min-height: 104px;
     padding: 8px;
   }
 
