@@ -7,8 +7,8 @@
   text-rendering: optimizeLegibility;
   --ink: #201915;
   --muted: #756b61;
-  --paper: #f7f3ed;
-  --ivory: #fffaf1;
+  --paper: #efe6da;
+  --ivory: #fff4e4;
   --gold: #c58a2a;
   --amber: #ffcf75;
   --teal: #0f6f70;
@@ -31,24 +31,36 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 250, 241, 0.96), rgba(247, 243, 237, 0.98)),
+    linear-gradient(180deg, rgba(245, 235, 220, 0.96), rgba(235, 224, 210, 0.98)),
     var(--paper);
 }
 
-body::before {
+body::before,
+body::after {
   position: fixed;
   inset: -18vh -12vw;
   z-index: 0;
   content: "";
-  background:
-    radial-gradient(circle at 12% 22%, rgba(255, 207, 117, 0.18), transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(255, 236, 176, 0.16), transparent 26%),
-    radial-gradient(circle at 74% 76%, rgba(15, 111, 112, 0.1), transparent 30%),
-    radial-gradient(circle at 28% 88%, rgba(200, 93, 76, 0.08), transparent 26%);
-  filter: blur(8px);
-  opacity: 0.8;
   pointer-events: none;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 10% 16%, rgba(255, 197, 94, 0.3), transparent 30%),
+    radial-gradient(circle at 82% 20%, rgba(255, 229, 164, 0.28), transparent 28%),
+    radial-gradient(circle at 72% 78%, rgba(15, 111, 112, 0.16), transparent 32%),
+    radial-gradient(circle at 28% 92%, rgba(200, 93, 76, 0.12), transparent 28%);
+  filter: blur(10px);
+  opacity: 0.95;
   animation: ambientGlow 18s ease-in-out infinite alternate;
+}
+
+body::after {
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(88, 57, 33, 0.08), transparent 24%, transparent 76%, rgba(88, 57, 33, 0.08)),
+    radial-gradient(circle at 50% 8%, rgba(255, 250, 241, 0.35), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(105, 72, 42, 0.1), transparent 42%);
 }
 
 #root {
@@ -469,7 +481,7 @@ h1 {
   padding: 18px;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
-  background: rgba(255, 250, 241, 0.94);
+  background: rgba(255, 244, 228, 0.92);
   box-shadow: 0 18px 44px rgba(32, 25, 21, 0.12);
   transition:
     transform 180ms ease,
@@ -864,7 +876,7 @@ h2 {
   overflow: hidden;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
-  background: #fffaf1;
+  background: rgba(255, 244, 228, 0.9);
   box-shadow: 0 30px 80px rgba(32, 25, 21, 0.12);
 }
 
@@ -965,7 +977,7 @@ h2 {
   border: 1px solid rgba(32, 25, 21, 0.1);
   background:
     linear-gradient(135deg, rgba(255, 207, 117, 0.22), rgba(191, 233, 223, 0.22)),
-    #fffaf1;
+    rgba(255, 244, 228, 0.92);
 }
 
 .showroom-wall__note strong {
@@ -1249,7 +1261,9 @@ h2 {
   padding: 28px;
   border: 1px solid rgba(32, 25, 21, 0.09);
   border-radius: 8px;
-  background: var(--ivory);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.34), transparent 46%),
+    var(--ivory);
   box-shadow: 0 20px 55px rgba(32, 25, 21, 0.08);
   transition:
     transform 200ms ease,
@@ -1667,7 +1681,7 @@ h2 {
   padding: 14px 18px;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
-  background: #fffaf1;
+  background: rgba(255, 244, 228, 0.9);
   color: var(--ink);
   font-weight: 800;
   transition:
@@ -1741,7 +1755,7 @@ h2 {
 
 .footer .brand {
   color: var(--ink);
-  background: #fffaf1;
+  background: rgba(255, 244, 228, 0.9);
   border-color: rgba(32, 25, 21, 0.1);
 }
 
