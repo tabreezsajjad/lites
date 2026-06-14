@@ -550,6 +550,7 @@ h1 {
 
 .intro > * {
   position: relative;
+  min-width: 0;
 }
 
 h2 {
@@ -892,14 +893,14 @@ h2 {
 .showroom-wall {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(280px, 1.05fr) minmax(280px, 0.95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   grid-template-rows: minmax(0, 1fr) auto;
   grid-template-areas:
     "hero tiles"
     "hero note";
   gap: 12px;
   min-height: 430px;
-  padding: 12px;
+  padding: 16px;
   overflow: hidden;
   border: 1px solid rgba(32, 25, 21, 0.1);
   border-radius: 8px;
@@ -973,7 +974,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: 12px;
+  gap: 14px;
   min-height: 0;
 }
 
@@ -1008,7 +1009,7 @@ h2 {
   display: grid;
   align-content: end;
   min-height: 0;
-  padding: 18px;
+  padding: 20px;
   border: 1px solid rgba(32, 25, 21, 0.1);
   background:
     linear-gradient(135deg, rgba(255, 207, 117, 0.22), rgba(191, 233, 223, 0.22)),
@@ -2310,7 +2311,7 @@ h2 {
   }
 
   .showroom-wall__tiles figure {
-    min-height: 92px;
+    min-height: 0;
   }
 
   .showroom-wall__tiles figcaption {
