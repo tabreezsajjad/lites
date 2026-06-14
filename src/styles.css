@@ -2242,9 +2242,11 @@ h2 {
     height: 64px;
   }
 
-  .journey__step {
+  .journey__step,
+  .journey__step:nth-child(even) {
     grid-template-columns: 1fr;
     gap: 12px;
+    padding-left: 0;
   }
 
   .journey::before {
@@ -2258,7 +2260,8 @@ h2 {
 
   .journey__image,
   .journey__step > div:not(.journey__image) {
-    grid-column: auto;
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .journey__step > div:not(.journey__image) {
