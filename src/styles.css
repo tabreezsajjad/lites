@@ -2246,6 +2246,7 @@ h2 {
   .journey__step:nth-child(even) {
     grid-template-columns: 1fr;
     gap: 12px;
+    justify-items: center;
     padding-left: 0;
   }
 
@@ -2256,12 +2257,14 @@ h2 {
   .journey__step > span {
     width: 44px;
     height: 44px;
+    justify-self: center;
   }
 
   .journey__image,
   .journey__step > div:not(.journey__image) {
     grid-column: 1 / -1;
     width: 100%;
+    max-width: 320px;
   }
 
   .journey__step > div:not(.journey__image) {
@@ -2313,16 +2316,47 @@ h2 {
 
   .services__gallery {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 22px auto 0;
   }
 
   .services__gallery span {
-    min-height: 160px;
+    min-height: 154px;
     padding: 10px;
   }
 
   .services__gallery b {
     font-size: 11px;
+  }
+
+  .services__heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .services__heading svg {
+    margin: 0;
+  }
+
+  .services__heading > div {
+    width: 100%;
+  }
+
+  .services__heading h2 {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .service-list {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .selection-board__visual img {
