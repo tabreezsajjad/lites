@@ -106,7 +106,10 @@ const collections = [
 const productTiles = [
   { label: 'Chandeliers', image: '/assets/product-chandelier.png' },
   { label: 'Pendants', image: '/assets/product-pendants.png' },
+  { label: 'Profiles', image: '/assets/product-architectural.png' },
   { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
+  { label: 'Outdoor', image: '/assets/product-outdoor.png' },
+  { label: 'Lamps', image: '/assets/product-table-floor.png' },
 ];
 
 const services = [
@@ -342,27 +345,24 @@ function App() {
             <h2>Explore the Lites collection.</h2>
           </div>
           <motion.div
-            className="collections__glow-card"
-            aria-label="Animated lighting finish preview"
+            className="collections__showcase"
+            aria-label="Featured lighting products"
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.45 }}
             transition={{ duration: 0.7, ease }}
           >
-            <div className="collections__glow-rig" aria-hidden="true">
-              <span className="collections__drop collections__drop--one" />
-              <span className="collections__drop collections__drop--two" />
-              <span className="collections__drop collections__drop--three" />
-            </div>
-            <div className="collections__glow-copy">
-              <strong>Compare the glow before you choose.</strong>
-              <span>Warm brass, crystal sparkle, clean profiles, and outdoor warmth in one showroom walk.</span>
-            </div>
-            <div className="collections__glow-tags" aria-label="Available lighting categories">
-              <span>Brass</span>
-              <span>Crystal</span>
-              <span>Profiles</span>
-            </div>
+            {collections.slice(0, 4).map((item, index) => (
+              <motion.figure
+                className="collections__showcase-item"
+                key={item.title}
+                animate={{ y: index % 2 === 0 ? [0, -5, 0] : [0, 5, 0] }}
+                transition={{ duration: 4.5 + index, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <img src={item.image} alt="" />
+                <figcaption>{item.title.replace('Statement ', '')}</figcaption>
+              </motion.figure>
+            ))}
           </motion.div>
         </div>
         {collections.map((item) => (
@@ -396,9 +396,12 @@ function App() {
           </div>
         </motion.div>
         <div className="journey">
-          {journeySteps.map((card) => (
+          {journeySteps.map((card, index) => (
             <motion.article className="journey__step" key={card.step} variants={fadeUp} whileHover={{ y: -5 }}>
               <span>{card.step}</span>
+              <div className="journey__image">
+                <img src={productTiles[index]?.image || collections[index]?.image} alt="" />
+              </div>
               <div>
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
@@ -410,10 +413,12 @@ function App() {
 
       <motion.section className="feature-band" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={staggerGroup}>
         <motion.div className="feature-band__media" aria-hidden="true" variants={fadeUp}>
-          <img src="/assets/product-wall-mirror.png" alt="" />
-          <span />
-          <span />
-          <span />
+          {collections.slice(3, 6).map((item) => (
+            <figure key={item.title}>
+              <img src={item.image} alt="" />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
         </motion.div>
         <motion.div className="feature-band__copy" variants={staggerGroup}>
           <motion.p className="section-kicker" variants={fadeUp}>Curated, not crowded</motion.p>
