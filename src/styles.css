@@ -2266,8 +2266,30 @@ h2 {
   }
 
   .feature-band {
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
+    gap: 18px;
     padding: 14px;
+  }
+
+  .feature-band__copy {
+    order: -1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .feature-band__copy h2 {
+    font-size: clamp(30px, 11vw, 42px);
+    line-height: 1.04;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .feature-band__copy p {
+    max-width: none;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .feature-band__media {
