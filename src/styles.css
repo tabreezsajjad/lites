@@ -1198,7 +1198,9 @@ h2 {
 
 .collections__showcase-item {
   position: relative;
+  display: block;
   min-height: 0;
+  margin: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #201915;
@@ -1574,7 +1576,9 @@ h2 {
 
 .feature-band__media figure {
   position: relative;
+  display: block;
   min-height: 0;
+  margin: 0;
   overflow: hidden;
   border-radius: 8px;
   background: #201915;
