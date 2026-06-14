@@ -169,6 +169,7 @@ const showroomHighlights = [
   { label: 'Chandeliers', image: '/assets/decor-chandelier-gallery.png' },
   { label: 'Crystal', image: '/assets/decor-crystal-closeup.png' },
   { label: 'Modern rings', image: '/assets/decor-modern-chandeliers.png' },
+  { label: 'Pendants', image: '/assets/product-pendants.png' },
   { label: 'Wall lights', image: '/assets/product-wall-mirror.png' },
 ];
 
