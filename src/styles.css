@@ -296,13 +296,18 @@ a {
 
 .brand__spiral,
 .brand__tail,
-.brand__base {
+.brand__base,
+.brand__bolt {
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 7.5;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.86));
+}
+
+.brand__bolt {
+  display: none;
 }
 
 .brand__spiral {
@@ -454,9 +459,9 @@ h1 {
   width: clamp(78px, 10vw, 132px);
   height: clamp(78px, 10vw, 132px);
   flex: 0 0 auto;
-  border-radius: 32%;
+  border-radius: 34% 34% 40% 40%;
   background:
-    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.18), transparent 52%),
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.28), transparent 50%),
     linear-gradient(180deg, rgba(28, 34, 40, 0.88), rgba(10, 12, 14, 0.94));
   box-shadow:
     0 0 26px rgba(255, 255, 255, 0.72),
@@ -471,22 +476,36 @@ h1 {
 
 .hero__brand-mark .brand__spiral,
 .hero__brand-mark .brand__tail,
-.hero__brand-mark .brand__base {
-  stroke-width: 8.4;
+.hero__brand-mark .brand__base,
+.hero__brand-mark .brand__bolt {
+  stroke-width: 8;
   filter:
     drop-shadow(0 0 7px rgba(255, 255, 255, 1))
     drop-shadow(0 0 18px rgba(255, 207, 117, 0.78));
 }
 
 .hero__brand-mark .brand__spiral {
-  stroke-dasharray: 18 14;
-  animation: poweredSpiral 3.2s linear infinite;
+  stroke-dasharray: 180;
+  animation: spiralTrace 5.5s ease-in-out infinite;
 }
 
 .hero__brand-mark .brand__tail,
 .hero__brand-mark .brand__base {
-  stroke-dasharray: 15 12;
-  animation: poweredSpiral 3.2s linear infinite reverse;
+  stroke-dasharray: none;
+  animation: none;
+}
+
+.hero__brand-mark .brand__bolt {
+  display: block;
+  stroke: #fffdf4;
+  stroke-width: 5.5;
+  stroke-dasharray: 78;
+  stroke-dashoffset: 78;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 18px rgba(255, 207, 117, 0.92))
+    drop-shadow(0 0 30px rgba(255, 207, 117, 0.52));
+  animation: electricBolt 2.4s ease-in-out infinite;
 }
 
 .hero__copy {
@@ -2782,6 +2801,40 @@ h2 {
 @keyframes poweredSpiral {
   to {
     stroke-dashoffset: -96;
+  }
+}
+
+@keyframes electricBolt {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 78;
+  }
+
+  18% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  32% {
+    opacity: 0.42;
+  }
+
+  42% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+      drop-shadow(0 0 26px rgba(255, 207, 117, 1))
+      drop-shadow(0 0 42px rgba(255, 207, 117, 0.72));
+  }
+
+  58% {
+    opacity: 0.82;
+    stroke-dashoffset: -10;
+  }
+
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -28;
   }
 }
 

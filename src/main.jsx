@@ -44,6 +44,7 @@ function LogoMark({ className = '' }) {
           className="brand__spiral"
           d="M49 49c-8 10-24 10-34 1C3 39 7 18 23 11c16-7 35 4 36 22 1 15-11 28-27 28-14 0-24-12-20-25 4-12 20-16 29-7 8 8 5 22-7 25-9 2-18-5-16-14 2-8 13-10 18-4 5 6 1 14-7 14"
         />
+        <path className="brand__bolt" d="M35 17 25 35h10l-8 23 18-30H34l8-11" />
         <path className="brand__tail" d="M48 49c-8 5-14 9-14 16 0 6 7 8 15 5" />
         <path className="brand__base" d="M32 68c6 4 15 4 22 0" />
       </svg>
