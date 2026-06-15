@@ -36,6 +36,21 @@ const staggerGroup = {
   },
 };
 
+function LogoMark() {
+  return (
+    <span className="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 64 76" focusable="false">
+        <path
+          className="brand__spiral"
+          d="M49 49c-8 10-24 10-34 1C3 39 7 18 23 11c16-7 35 4 36 22 1 15-11 28-27 28-14 0-24-12-20-25 4-12 20-16 29-7 8 8 5 22-7 25-9 2-18-5-16-14 2-8 13-10 18-4 5 6 1 14-7 14"
+        />
+        <path className="brand__tail" d="M48 49c-8 5-14 9-14 16 0 6 7 8 15 5" />
+        <path className="brand__base" d="M32 68c6 4 15 4 22 0" />
+      </svg>
+    </span>
+  );
+}
+
 const navItems = [
   { label: 'Collections', href: '#collections' },
   { label: 'Chandeliers', href: '#chandeliers' },
@@ -239,8 +254,8 @@ function App() {
           transition={{ duration: 0.7, ease }}
         >
           <a className="brand" href="#home" aria-label="Lites home">
-            <span className="brand__mark">L</span>
-            <span>Lites</span>
+            <LogoMark />
+            <span className="brand__word">Lites</span>
           </a>
           <nav className="nav__links">
             {navItems.map((item) => (
@@ -554,8 +569,8 @@ function App() {
 
       <footer className="footer">
         <a className="brand" href="#home" aria-label="Lites home">
-          <span className="brand__mark">L</span>
-          <span>Lites</span>
+          <LogoMark />
+          <span className="brand__word">Lites</span>
         </a>
         <nav aria-label="Footer navigation">
           {navItems.map((item) => (
