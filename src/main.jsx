@@ -36,9 +36,9 @@ const staggerGroup = {
   },
 };
 
-function LogoMark() {
+function LogoMark({ className = '' }) {
   return (
-    <span className="brand__mark" aria-hidden="true">
+    <span className={`brand__mark ${className}`.trim()} aria-hidden="true">
       <svg viewBox="0 0 64 76" focusable="false">
         <path
           className="brand__spiral"
@@ -307,7 +307,10 @@ function App() {
             <Sparkles size={16} />
             Premium lighting studio in Guwahati
           </motion.p>
-          <motion.h1 variants={fadeUp}>Lites</motion.h1>
+          <motion.div className="hero__title" variants={fadeUp}>
+            <LogoMark className="hero__brand-mark" />
+            <h1>Lites</h1>
+          </motion.div>
           <motion.p className="hero__copy" variants={fadeUp}>
             Chandeliers, pendants, architectural lights, and warm design guidance for spaces
             that need to feel finished the moment the switch turns on.
