@@ -449,43 +449,42 @@ h1 {
   width: clamp(78px, 10vw, 132px);
   height: clamp(78px, 10vw, 132px);
   flex: 0 0 auto;
-  border-radius: 34% 34% 40% 40%;
+  border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.28), transparent 50%),
-    linear-gradient(180deg, rgba(28, 34, 40, 0.88), rgba(10, 12, 14, 0.94));
+    radial-gradient(circle, rgba(255, 255, 255, 0.22) 0 32%, rgba(255, 255, 255, 0.08) 33% 43%, transparent 55%);
   box-shadow:
-    0 0 26px rgba(255, 255, 255, 0.72),
-    0 0 68px rgba(255, 207, 117, 0.26),
-    inset 0 0 18px rgba(255, 250, 241, 0.08);
+    0 0 24px rgba(255, 255, 255, 0.72),
+    0 0 58px rgba(255, 207, 117, 0.32),
+    0 0 96px rgba(255, 207, 117, 0.16);
   animation: logoGlow 3.8s ease-in-out infinite;
 }
 
 .hero__brand-mark::after {
   display: block;
   position: absolute;
-  inset: -8px;
-  border-radius: 34% 34% 40% 40%;
+  inset: -22px;
+  border-radius: 50%;
   content: "";
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 62%);
-  opacity: 0;
-  transform: scale(0.72);
-  animation: logoAura 3.8s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), rgba(255, 207, 117, 0.18) 28%, transparent 68%);
+  opacity: 0.66;
+  transform: scale(1);
+  animation: bulbHalo 4.6s ease-in-out infinite;
   pointer-events: none;
 }
 
 .hero__brand-mark svg {
-  width: 78%;
-  height: 78%;
+  width: 88%;
+  height: 88%;
 }
 
 .hero__brand-mark .brand__spiral,
 .hero__brand-mark .brand__tail,
 .hero__brand-mark .brand__base,
 .hero__brand-mark .brand__bolt {
-  stroke-width: 8;
+  stroke-width: 8.8;
   filter:
-    drop-shadow(0 0 7px rgba(255, 255, 255, 1))
-    drop-shadow(0 0 18px rgba(255, 207, 117, 0.78));
+    drop-shadow(0 0 8px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 20px rgba(255, 207, 117, 0.86));
 }
 
 .hero__brand-mark .brand__spiral {
@@ -501,8 +500,8 @@ h1 {
 
 .hero__brand-mark .brand__bolt {
   display: block;
-  stroke: #fffdf4;
-  stroke-width: 5.5;
+  stroke: #ffe6a9;
+  stroke-width: 6.4;
   stroke-dasharray: 78;
   stroke-dashoffset: 78;
   filter:
@@ -2786,6 +2785,19 @@ h2 {
   72% {
     opacity: 0.24;
     transform: scale(1.28);
+  }
+}
+
+@keyframes bulbHalo {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: scale(1.08);
   }
 }
 
