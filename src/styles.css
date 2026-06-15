@@ -273,19 +273,10 @@ a {
   box-shadow:
     0 0 12px rgba(255, 255, 255, 0.5),
     0 0 28px rgba(255, 207, 117, 0.22);
-  animation: logoGlow 3.8s ease-in-out infinite;
 }
 
 .brand__mark::after {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  content: "";
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 62%);
-  opacity: 0;
-  transform: scale(0.72);
-  animation: logoAura 3.8s ease-in-out infinite;
-  pointer-events: none;
+  display: none;
 }
 
 .brand__mark svg {
@@ -313,7 +304,6 @@ a {
 .brand__spiral {
   stroke-dasharray: 180;
   stroke-dashoffset: 0;
-  animation: spiralTrace 5.5s ease-in-out infinite;
 }
 
 .brand__tail,
@@ -467,6 +457,20 @@ h1 {
     0 0 26px rgba(255, 255, 255, 0.72),
     0 0 68px rgba(255, 207, 117, 0.26),
     inset 0 0 18px rgba(255, 250, 241, 0.08);
+  animation: logoGlow 3.8s ease-in-out infinite;
+}
+
+.hero__brand-mark::after {
+  display: block;
+  position: absolute;
+  inset: -8px;
+  border-radius: 34% 34% 40% 40%;
+  content: "";
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 62%);
+  opacity: 0;
+  transform: scale(0.72);
+  animation: logoAura 3.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hero__brand-mark svg {
